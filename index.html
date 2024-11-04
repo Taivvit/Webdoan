@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng Bán Quần Áo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<body>
+  <h1>Cửa Hàng Quần Áo</h1>
+  
+  <!-- Danh sách sản phẩm -->
+  <div class="product-list">
+    <div class="product">
+      <h2>Áo Thun</h2>
+      <p>Giá: 200,000 VND</p>
+      <div class="add-to-cart" onclick="addToCart('Áo Thun', 200000)">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="tooltip">Thêm vào giỏ hàng</span>
+      </div>
+    </div>
+  </div>
+  <div class="product">
+    <h2>Quần Jeans</h2>
+    <p>Giá: 500,000 VND</p>
+    <div class="add-to-cart" onclick="addToCart('Quần Jeans', 500000)">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="tooltip">Thêm vào giỏ hàng</span>
+    </div>
+  </div>
+</div>
+<div class="product">
+  <h2>Áo Khoác</h2>
+  <p>Giá: 300,000 VND</p>
+  <div class="add-to-cart" onclick="addToCart('Áo Khoác', 300000)">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="tooltip">Thêm vào giỏ hàng</span>
+  </div>
+</div>
+</div>
+
+<!-- Giỏ hàng -->
+<h2>Giỏ Hàng</h2>
+<div id="cart">
+  <ul id="cart-items"></ul>
+  <p id="total-price">Tổng tiền: 0 VND</p>
+
+  <!-- Nút mở hộp thanh toán -->
+  <button id="open-checkout-button">Thanh toán</button>
+
+  <!-- Lớp phủ và hộp thanh toán -->
+  <div class="overlay" id="overlay" style="display: none;">
+    <div class="checkout-box">
+      <h3>Chọn Phương Thức Thanh Toán</h3>
+      <div id="payment-methods">
+        <label>
+          <input type="radio" name="payment-method" value="Tiền mặt" checked>
+          <i class="fas fa-money-bill-wave"></i> Tiền mặt khi nhận hàng
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="Thẻ ngân hàng">
+          <i class="fas fa-credit-card"></i> Thẻ ngân hàng
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="Ví điện tử">
+          <i class="fas fa-wallet"></i> Ví điện tử
+        </label>
+      </div>
+      <button onclick="checkout()">Xác nhận thanh toán</button>
+      <button id="close-checkout-button">Đóng</button>
+    </div>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
